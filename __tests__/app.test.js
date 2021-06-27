@@ -11,11 +11,13 @@ describe('friends routes', () => {
 
   const cami = {
     name: 'Chamomile',
+    accountId: 'cami.testnet',
     birthday: '2020-05-13'
   };
 
   const noodle = {
     name: 'Noodle',
+    accountId: 'cami.testnet',
     birthday: '2019-11-03'
   };
 
@@ -38,6 +40,7 @@ describe('friends routes', () => {
 
     expect(res.body).toEqual({
       ...cami,
+      balance: expect.any(String),
       id: expect.any(Number)
     });
   });
@@ -51,10 +54,12 @@ describe('friends routes', () => {
     expect(res.body).toEqual([
       {
         ...cami,
+        balance: expect.any(String),
         id: expect.any(Number)
       },
       {
         ...noodle,
+        balance: expect.any(String),
         id: expect.any(Number)
       }
     ]);
